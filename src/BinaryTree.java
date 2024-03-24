@@ -75,7 +75,7 @@ public class BinaryTree {
     }
 
     public int heightOfTree() {
-        return height(root); // Calcula a altura da árvore (raiz)
+        return height(root);
     }
 
 
@@ -98,14 +98,14 @@ public class BinaryTree {
 
 
     public void printHeightOfNodes() {
-        printHeightOfNodes(root); // Inicia a impressão da altura da raiz
+        printHeightOfNodes(root);
     }
 
     private void printHeightOfNodes(TreeNode node) {
         if (node != null) {
             System.out.println("Valor: " + node.getData() + ", Altura: " + height(node));
-            printHeightOfNodes(node.getNodeLeft()); // Chamada recursiva para o nó esquerdo
-            printHeightOfNodes(node.getNodeRigth()); // Chamada recursiva para o nó direito
+            printHeightOfNodes(node.getNodeLeft());
+            printHeightOfNodes(node.getNodeRigth());
         }
     }
 
