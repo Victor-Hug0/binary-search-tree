@@ -10,6 +10,34 @@ public class BinaryTree {
         insertNew(root, data);
     }
 
+
+    public int depth() {
+        return depth(root);
+    }
+
+    public int heightOfTree() {
+        return depth(root);
+    }
+
+    public int levelOfTree(){
+        return depth(root);
+    }
+    public void printIndentedTree() {
+        printIndentedTree(root, 0);
+    }
+
+    public void printDepthOfNodes() {
+        printDepthOfNodes(root, 0);
+    }
+
+    public int levelOfNode(int data) {
+        return levelOfNode(root, data, 0);
+    }
+
+    public void printHeightOfNodes() {
+        printHeightOfNodes(root);
+    }
+
     private void insertNew(TreeNode node, int data){
         if (node == null) {
             return;
@@ -30,22 +58,14 @@ public class BinaryTree {
         }
     }
 
-    public int depth() {
-        return depth(root);
-    }
-
     private int depth(TreeNode node) {
         if (node == null) {
-            return 0;
+            return -1;
         } else {
             int leftDepth = depth(node.getNodeLeft());
             int rightDepth = depth(node.getNodeRigth());
             return Math.max(leftDepth, rightDepth) + 1;
         }
-    }
-
-    public int levelOfNode(int data) {
-        return levelOfNode(root, data, 0);
     }
 
     private int levelOfNode(TreeNode node, int data, int level) {
@@ -62,10 +82,6 @@ public class BinaryTree {
         return Math.max(leftDepth, rightDepth);
     }
 
-    public void printDepthOfNodes() {
-        printDepthOfNodes(root, 0);
-    }
-
     private void printDepthOfNodes(TreeNode node, int depth) {
         if (node != null) {
             System.out.println("Valor: " + node.getData() + ", Profundidade: " + depth);
@@ -74,55 +90,12 @@ public class BinaryTree {
         }
     }
 
-    public int heightOfTree() {
-        return height(root);
-    }
-
-
-    public int heightOfNode(int data) {
-        return heightOfNode(root, data);
-    }
-
-    private int heightOfNode(TreeNode node, int data) {
-        if (node == null) {
-            return -1;
-        }
-        if (node.getData() == data) {
-            return height(node);
-        }
-        int leftHeight = heightOfNode(node.getNodeLeft(), data);
-        int rightHeight = heightOfNode(node.getNodeRigth(), data);
-
-        return Math.max(leftHeight, rightHeight);
-    }
-
-
-    public void printHeightOfNodes() {
-        printHeightOfNodes(root);
-    }
-
     private void printHeightOfNodes(TreeNode node) {
         if (node != null) {
-            System.out.println("Valor: " + node.getData() + ", Altura: " + height(node));
+            System.out.println("Valor: " + node.getData() + ", Altura: " + depth(node));
             printHeightOfNodes(node.getNodeLeft());
             printHeightOfNodes(node.getNodeRigth());
         }
-    }
-
-    private int height(TreeNode node) {
-        if (node == null) {
-            return -1;
-        }
-
-        int leftHeight = height(node.getNodeLeft());
-        int rightHeight = height(node.getNodeRigth());
-
-        return Math.max(leftHeight, rightHeight) + 1;
-    }
-
-
-    public void printIndentedTree() {
-        printIndentedTree(root, 0);
     }
 
     public void printIndentedTree(TreeNode node, int level) {

@@ -20,12 +20,6 @@ public class Main {
         binaryTree.insert(70);
         binaryTree.insert(80);
 
-        binaryTree.printIndentedTree();
-        System.out.println(binaryTree.depth());
-        binaryTree.printDepthOfNodes();
-        System.out.println(binaryTree.heightOfTree());
-        System.out.println(binaryTree.heightOfNode(45));
-
         while (true){
             Scanner scanner = new Scanner(System.in);
             System.out.println(
@@ -50,7 +44,7 @@ public class Main {
                     System.out.println("Nível do nó " + node + ": " + binaryTree.levelOfNode(node));
                     break;
                 case 2:
-                    System.out.println("Nível da árvore: " + binaryTree.depth());
+                    System.out.println("Nível da árvore: " + binaryTree.levelOfTree());
                     break;
                 case 3:
                     System.out.println("Profundidade de cada nó");
@@ -71,7 +65,6 @@ public class Main {
                     binaryTree.printIndentedTree();
                     break;
             }
-
         }
     }
 }
