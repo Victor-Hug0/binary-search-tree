@@ -64,6 +64,8 @@ public class Main {
                     System.out.println("Árvore identada: ");
                     binaryTree.printIndentedTree();
                     break;
+                default:
+                    System.out.println("Escolha um valor válido!");
             }
         }
     }
