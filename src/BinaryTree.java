@@ -108,4 +108,40 @@ public class BinaryTree {
     public void printIndentedTree() {
         printIndentedTree(root, 0);
     }
+
+    public void inOrder() {
+        inOrderRecursivamente(root);
+    }
+
+    private void inOrderRecursivamente(TreeNode node) {
+        if (node != null) {
+            inOrderRecursivamente(node.getNodeLeft());
+            System.out.print(node.getData() + " ");
+            inOrderRecursivamente(node.getNodeRigth());
+        }
+    }
+
+    public void posOrder() {
+        posOrderRecursivamente(root);
+    }
+
+    private void posOrderRecursivamente(TreeNode node) {
+        if (node != null) {
+            posOrderRecursivamente(node.getNodeLeft());
+            posOrderRecursivamente(node.getNodeRigth());
+            System.out.print(node.getData() + " ");
+        }
+    }
+
+    public void preOrder() {
+        preOrderRecursivamente(root);
+    }
+
+    private void preOrderRecursivamente(TreeNode node) {
+        if (node != null) {
+            System.out.print(node.getData() + " ");
+            preOrderRecursivamente(node.getNodeLeft());
+            preOrderRecursivamente(node.getNodeRigth());
+        }
+    }
 }

@@ -23,15 +23,21 @@ public class Main {
         while (true){
             Scanner scanner = new Scanner(System.in);
             System.out.println(
-                    "Estolha uma opção: \n" +
-                    "0 - ENCERRAR PROGRAMA  \n" +
-                    "1 - NÍVEL DE UM NÓ \n" +
-                    "2 - NÍVEL DA ÁRVORE \n" +
-                    "3 - PROFUNDIDADE DE CADA NÓ \n" +
-                    "4 - PROFUNDIDADE DA ÁRVORE \n" +
-                    "5 - ALTURA DE CADA NÓ \n" +
-                    "6 - ALTURA DA ÁRVORE \n" +
-                    "7 - ÁRVORE IDENTADA"
+                    """
+
+                            Estolha uma opção:\s
+                            0 - ENCERRAR PROGRAMA \s
+                            1 - NÍVEL DE UM NÓ\s
+                            2 - NÍVEL DA ÁRVORE\s
+                            3 - PROFUNDIDADE DE CADA NÓ\s
+                            4 - PROFUNDIDADE DA ÁRVORE\s
+                            5 - ALTURA DE CADA NÓ\s
+                            6 - ALTURA DA ÁRVORE\s
+                            7 - ÁRVORE IDENTADA\s
+                            8 - PÓS ORDEM\s
+                            9 - PRÉ ORDEM\s
+                            10 - EM ORDEM
+                            """
             );
 
             int escolha = scanner.nextInt();
@@ -63,6 +69,18 @@ public class Main {
                 case 7:
                     System.out.println("Árvore identada: ");
                     binaryTree.printIndentedTree();
+                    break;
+                case 8:
+                    System.out.print("Pós ordem: ");
+                    binaryTree.posOrder();
+                    break;
+                case 9:
+                    System.out.print("Pre ordem: ");
+                    binaryTree.preOrder();
+                    break;
+                case 10:
+                    System.out.print("Em ordem: ");
+                    binaryTree.inOrder();
                     break;
                 default:
                     System.out.println("Escolha um valor válido!");
