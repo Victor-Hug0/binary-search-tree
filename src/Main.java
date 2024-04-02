@@ -34,9 +34,9 @@ public class Main {
                             5 - ALTURA DE CADA NÓ\s
                             6 - ALTURA DA ÁRVORE\s
                             7 - ÁRVORE IDENTADA\s
-                            8 - PÓS ORDEM\s
-                            9 - PRÉ ORDEM\s
-                            10 - EM ORDEM
+                            8 - PÓS ORDEM (LRN)\s
+                            9 - PRÉ ORDEM (NLR)\s
+                            10 - EM ORDEM (LNR)
                             """
             );
 
