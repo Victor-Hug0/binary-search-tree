@@ -30,26 +30,26 @@ public class BinaryTree {
         insertNew(root, data);
     }
 
-    private int heigthNode(TreeNode node) {
+    private int depth(TreeNode node) {
         if (node == null) {
             return -1;
         } else {
-            int leftDepth = heigthNode(node.getNodeLeft());
-            int rightDepth = heigthNode(node.getNodeRigth());
+            int leftDepth = depth(node.getNodeLeft());
+            int rightDepth = depth(node.getNodeRigth());
             return Math.max(leftDepth, rightDepth) + 1;
         }
     }
 
     public int depth() {
-        return heigthNode(root);
+        return depth(root);
     }
 
     public int heightOfTree() {
-        return heigthNode(root);
+        return depth(root);
     }
 
     public int levelOfTree(){
-        return heigthNode(root);
+        return depth(root);
     }
 
     private int levelOfNode(TreeNode node, int data, int level) {
@@ -84,7 +84,7 @@ public class BinaryTree {
 
     private void printHeightOfNodes(TreeNode node) {
         if (node != null) {
-            System.out.println("Valor: " + node.getData() + ", Altura: " + heigthNode(node));
+            System.out.println("Valor: " + node.getData() + ", Altura: " + depth(node));
             printHeightOfNodes(node.getNodeLeft());
             printHeightOfNodes(node.getNodeRigth());
         }
